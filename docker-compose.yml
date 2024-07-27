@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      container_name: Aktan
+      volumes:
+        - .:/app
+        - db_data:/app/db
+      command: py main.py
+      network_mode: 'host'
+
+volumes:
+  db_data:
